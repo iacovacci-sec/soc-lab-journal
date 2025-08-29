@@ -9,7 +9,7 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 ### Steps (Lab Setup & Configuration)  
 - [Step 1 – Proxmox Install & Repo Fix](error-1-proxmox-update.md)  
 - [Step 2 – Tailscale Remote Access Setup](step-2-tailscale-setup.md)  
-- [Step 3 – vmbr1 Bridge for Isolated Lab Network](step-3-vmbr1-setup.md)  
+- [Step 3 – vmbr1 Bridge for Isolated Lab Network](step-3-vmbr1-bridge.md)  
 - [Step X – Title Here](step-x-title.md)  
 
 ### Errors (Troubleshooting Logs)  
