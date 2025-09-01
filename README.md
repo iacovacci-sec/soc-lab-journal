@@ -16,7 +16,7 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 - [Error 1 – Proxmox Package Database Update Failure](error-1-proxmox-update.md)
 - [Error 2 – VirtIO Driver Missing During Windows Server Setup](error-2-virtio-driver.md)
 - [Error 3 – VirtIO NIC Driver Missing](error-3-virtio-nic.md)
-
+- [Error 4 – VirtIO Driver “No Signed Device Drivers” During Windows 10 Client Setup](error-4-virtio-driver-nosigned.md)
 ---
 
 ## Folder Structure
