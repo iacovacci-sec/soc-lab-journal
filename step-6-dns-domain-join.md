@@ -10,7 +10,7 @@ In this step, we configured DNS inside the SOC lab and tested domain join functi
    - Created a new user `moevacci` in Active Directory Users and Computers (ADUC).  
    - Ensured the account was set to never expire and ready for login.  
 
-   ![AD User Created](Step-6/01-ad-user-created.png)  
+   ![AD User Created](Step-6/01-ad-user-created.jpg)  
 
 
 2. **Verified DNS Forward Lookup Zones**  
