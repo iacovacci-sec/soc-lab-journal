@@ -34,11 +34,11 @@ The Windows Server ISO does not include **VirtIO storage/network drivers** by de
    ![Download VirtIO](Error-2/06-virtio-iso-added.png)
 
 6. Attached the VirtIO ISO as a secondary CD drive in Proxmox.  
-   ![Two ISOs](Error-2/07-hardware-with-2-isos.png)
+   ![Two ISOs](Error-2/08-select-viostor-w10-amd64.png)
 
 7. From Windows Setup, loaded drivers from the VirtIO ISO → selected  
    **Red Hat VirtIO SCSI pass-through controller (w10/amd64)**.  
-   ![Select Driver](Error-2/08-select-viostor-w10-amd64.png)
+   ![Select Driver](Error-2/07-hardware-with-2-isos.png)
 
 8. Installer immediately detected the disk → installation continued.  
    ![Disk Detected](Error-2/09-disk-detected-install.png)
