@@ -65,8 +65,6 @@ soc-lab-journal/
 └── Step-X/
 └── 01-example.png
 
-yaml
-Copy code
 
 ---
 
@@ -135,5 +133,4 @@ In-page anchors (GitHub auto-generates):
 Link to a heading ## Lesson Learned with [#lesson-learned] after the file, e.g.
 [Jump to lessons](error-3-virtio-nic.md#lesson-learned)
 
-vbnet
-Copy code
+
