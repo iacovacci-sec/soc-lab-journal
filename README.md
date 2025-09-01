@@ -10,7 +10,7 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 - [Step 1 – Proxmox Install & Repo Fix](error-1-proxmox-update.md)
 - [Step 2 – Tailscale Remote Access Setup](step-2-tailscale-setup.md)
 - [Step 3 – vmbr1 Bridge for Isolated Lab Network](step-3-vmbr1-setup.md)
-- [Step 4 – Windows Server VirtIO NIC Setup](step-4-virtio-nic-setup.md)
+- [Step 4 – Active Directory Domain Services Setup](step-4-ad-ds-setup.md)
 
 ### Errors (Troubleshooting Logs)
 - [Error 1 – Proxmox Package Database Update Failure](error-1-proxmox-update.md)
