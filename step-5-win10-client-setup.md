@@ -18,7 +18,7 @@ As part of building the SOC lab, a Windows 10 client VM was installed on Proxmox
   - CPU: 4 cores
 
 **Screenshot – Confirm VM Settings**
-![VM Confirm](01-win10-confirm.png)
+![VM Confirm](Step-5/01-win10-confirm.png)
 
 ---
 
@@ -32,7 +32,7 @@ After creation, verified VM hardware in Proxmox:
 - `Network Device (net0)` → VirtIO NIC on isolated bridge (vmbr1)  
 
 **Screenshot – VM Added to Proxmox**
-![VM Added](02-win10-client-added.png)
+![VM Added](Step-5/02-win10-client-added.png)
 
 ---
 
