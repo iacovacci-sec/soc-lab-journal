@@ -20,7 +20,6 @@ The Windows Server ISO does not include **VirtIO storage/network drivers** by de
 **Fix Applied**  
 1. Verified VM was configured with VirtIO SCSI + VirtIO NIC in Proxmox.  
    ![VirtIO Config](Error-2/01-vm-system-virtio-scsi.png)  
-   ![VirtIO NIC](Error-2/02-vm-network-virtio.png)
 
 2. Confirmed hardware view before fix — only Windows ISO + disk attached.  
    ![Hardware Pre-Fix](Error-2/03-hardware-pre-fix.png)
