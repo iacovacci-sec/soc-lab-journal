@@ -24,12 +24,7 @@ As part of building the SOC lab, a Windows 10 client VM was installed on Proxmox
 
 ## Hardware Configuration
 
-After creation, verified VM hardware in Proxmox:
-
-- `CD/DVD Drive (ide0)` → VirtIO ISO  
-- `CD/DVD Drive (ide2)` → Windows 10 installation ISO  
-- `Hard Disk (scsi0)` → 60GB  
-- `Network Device (net0)` → VirtIO NIC on isolated bridge (vmbr1)  
+After creation, verified VM in Proxmox:
 
 **Screenshot – VM Added to Proxmox**
 ![VM Added](Step-5/02-win10-client-added.png)
