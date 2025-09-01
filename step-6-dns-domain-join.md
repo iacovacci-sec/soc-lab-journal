@@ -30,7 +30,7 @@ In this step, we configured DNS inside the SOC lab and tested domain join functi
    - From the Windows 10 Client, successfully pinged `soclabs.local` which resolved to the server’s IP.  
    - `nslookup` returned correct resolution, though intermittent IPv6 timeout errors were observed (seed for Error 5).  
 
-   ![Ping and nslookup test](Step-6/04-ping-nslookup.png)  
+   ![Ping and nslookup test](Step-6/04-ping-nslookup.jpg)  
  
 
 ---
