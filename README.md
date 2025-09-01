@@ -11,7 +11,7 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 - [Step 2 – Tailscale Remote Access Setup](step-2-tailscale-setup.md)
 - [Step 3 – vmbr1 Bridge for Isolated Lab Network](step-3-vmbr1-setup.md)
 - [Step 4 – Active Directory Domain Services Setup](step-4-ad-ds-setup.md)
-
+- [Step 5 - Windows 10 Client VM Setup](step-5-win10-client-setup.md) 
 ### Errors (Troubleshooting Logs)
 - [Error 1 – Proxmox Package Database Update Failure](error-1-proxmox-update.md)
 - [Error 2 – VirtIO Driver Missing During Windows Server Setup](error-2-virtio-driver.md)
