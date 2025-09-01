@@ -8,38 +8,38 @@ Windows installer displayed:
 
 > “No drives were found. Click Load driver to provide a mass storage driver for installation.”
 
-![No Drives](errors/Error-2/02-no-drives.png)
+![No Drives](Error-2/02-no-drives.png)
 
 ## Root Cause
 The Windows Server ISO does not include VirtIO storage/network drivers by default. Because the VM disk was presented as VirtIO SCSI, the installer had no compatible driver to recognize the disk.
 
 ## Fix Applied
 - Verified VM was configured with VirtIO SCSI + VirtIO NIC in Proxmox.  
-  ![Hardware Pre-Fix](errors/Error-2/01-hw-pre-fix.png)  
+  ![Hardware Pre-Fix](Error-2/01-hw-pre-fix.png)  
 
 - Attempted Windows install, hit *no drives detected*.  
-  ![No Drives](errors/Error-2/02-no-drives.png)  
+  ![No Drives](Error-2/02-no-drives.png)  
 
 - Downloaded the official VirtIO ISO (`virtio-win-0.1.271.iso`) from Fedora.  
-  ![VirtIO ISO Download](errors/Error-2/extra-fedora-source.png)  
+  ![VirtIO ISO Download](Error-2/extra-fedora-source.png)  
 
 - Attached the VirtIO ISO as a secondary CD drive in Proxmox.  
-  ![VirtIO ISO Attached](errors/Error-2/04-virtio-iso-attached.png)  
+  ![VirtIO ISO Attached](Error-2/04-virtio-iso-attached.png)  
 
 - From Windows Setup, loaded drivers from the VirtIO ISO → selected *Red Hat VirtIO SCSI pass-through controller (w10/amd64)*.  
-  ![Select Driver](errors/Error-2/05-select-driver.png)  
+  ![Select Driver](Error-2/05-select-driver.png)  
 
 - After loading the drivers, Windows installation proceeded. However, on first boot the VM failed with PXE-over-IPv6 errors:  
-  ![PXE Boot Failure](errors/Error-2/06-boot-failure.png)  
+  ![PXE Boot Failure](Error-2/06-boot-failure.png)  
 
 - The issue was caused by Proxmox attempting to boot via IPv6 network instead of the installed disk.  
 - **Fix:** Manually unchecked IPv6 in the VM’s network settings, leaving only IPv4 enabled. Once disabled, the VM booted normally from disk.  
 
 - Proxmox occasionally showed the VirtIO ISO as “undefined” in the hardware tab, but installation still succeeded.  
-  ![Undefined CD](errors/Error-2/07-hw-undefined.png)  
+  ![Undefined CD](Error-2/07-hw-undefined.png)  
 
 - Installation completed successfully, VM booted into Windows.  
-  ![First Boot Success](errors/Error-2/08-success.png)  
+  ![First Boot Success](Error-2/08-success.png)  
 
 ## Lesson Learned
 Whenever using VirtIO SCSI or NIC on Windows VMs in Proxmox, **always attach the VirtIO driver ISO** during setup so the installer can detect the disk.  
