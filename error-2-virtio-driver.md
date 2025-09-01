@@ -10,8 +10,6 @@ Windows installer displayed:
 
 > *“No drives were found. Click Load driver to provide a mass storage driver for installation.”*  
 
-![Error Screenshot](Error-2/04-no-drives-load-driver.png)
-
 ---
 
 **Root Cause**  
