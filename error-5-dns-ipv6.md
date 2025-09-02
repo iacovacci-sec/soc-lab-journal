@@ -24,26 +24,26 @@ Address: ::1
 
 ## Error Screenshots  
 
-:DNS services confirmed running on the server VM.  
-`01-dns-services.png` (services in server vm.png)  
+First, I checked that DNS services were running on the domain controller.  
+![DNS Services Running](Error-5/01-dns-services.png)  
 
-:Forward Lookup Zones created, showing `soclab.local`.  
-`02-forward-zones.png` (forward lookup zones.png)  
+Next, I confirmed the Forward Lookup Zones contained `soclab.local`.  
+![Forward Zones](Error-5/02-forward-zones.png)  
 
-:Server VM IP configuration showing loopback DNS (::1) instead of IPv4.  
-`03-server-ipconfig.png` (win server ipconfig again.png)  
+On the server, IP configuration showed the loopback DNS (`::1`) being used instead of IPv4.  
+![Server IPConfig](Error-5/03-server-ipconfig.png)  
 
-:Windows 10 client IP configuration pointing to DNS server.  
-`04-client-ipconfig.png` (win10 client ipconfig cont.png)  
+On the Windows 10 client, DNS was pointed at the domain controller.  
+![Client IPConfig](Error-5/04-client-ipconfig.png)  
 
-:Client ping test against soclab.local resolving to IPv4.  
-`05-client-ping-domain.png` (win10 client ping server.png)  
+A ping test against `soclab.local` resolved correctly to the IPv4 address.  
+![Client Ping](Error-5/05-client-ping-domain.png)  
 
-:`nslookup` timeout using default (::1) DNS.  
-`06-nslookup-timeout.png` (02-nslookup-timeout.png)  
+Running `nslookup soclab.local` by default failed due to IPv6.  
+![nslookup Timeout](Error-5/06-nslookup-timeout.png)  
 
-:`nslookup` success forcing IPv4 query against 192.168.100.10.  
-`07-nslookup-success.png` (03-nslookup-success-ipv4.png)  
+Finally, forcing the query against the IPv4 address (`192.168.100.10`) succeeded.  
+![nslookup Success](Error-5/07-nslookup-success.png)  
 
 ---
 
@@ -68,5 +68,6 @@ This succeeded, confirming the DNS records were correct.
 - Windows defaults to IPv6 for DNS queries if it’s available, even if IPv6 isn’t configured properly.  
 - Always check both IPv4 and IPv6 paths when diagnosing DNS issues.  
 - When building a lab, disabling IPv6 on adapters or forcing IPv4 DNS servers avoids unnecessary resolution failures.  
+
 
 
