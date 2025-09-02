@@ -43,7 +43,7 @@ Running `nslookup soclab.local` by default failed due to IPv6.
 ![nslookup Timeout](Error-5/06-nslookup-timeout.png)  
 
 Finally, forcing the query against the IPv4 address (`192.168.100.10`) succeeded.  
-![nslookup Success](Error-5/07-nslookup-success.jpg)  
+![nslookup Success](Error-5/07-nslookup-success-ipv4.png)  
 
 ---
 
