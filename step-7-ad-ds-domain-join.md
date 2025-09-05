@@ -58,4 +58,4 @@ Testing logon at the client side is the most conclusive way to confirm AD setup 
 
 Auxiliary Screenshots
 
-aux-01-server-events.png – AD DS/Server Manager showing domain service warnings and replication errors after promotion.
+01-aux-server-events.png – AD DS/Server Manager showing domain service warnings and replication errors after promotion.
