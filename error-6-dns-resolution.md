@@ -1,73 +1,62 @@
 # Error #6 – DNS Resolution Failure During Domain Join  
 
 ## Context (What I Was Doing)  
-While setting up Active Directory (AD DS) and DNS on the Server 2019 Domain Controller (`DC1` – 192.168.100.10), I attempted to join the Windows 10 client (`192.168.100.11`) to the `soclab.local` domain.  
+I was attempting to join the Windows 10 client (192.168.100.11) to the `soclab.local` domain after promoting the Server 2019 VM (192.168.100.10) to a Domain Controller with DNS.  
 
-Connectivity between the systems was fine — ICMP pings succeeded — but DNS queries (`nslookup`) were failing intermittently. This prevented the domain join process from completing.  
+Even though pings between client and server succeeded, DNS lookups (`nslookup`) were not resolving consistently, which prevented the domain join process.  
 
 ## Error Message  
-From the Windows 10 client:  
 
+**Client-side (`192.168.100.11`):**  
 C:\Users\moevacci> nslookup soclab.local
 DNS request timed out.
 timeout was 2 seconds.
 Server: UnKnown
 Address: 192.168.100.10
 
-Name: soclab.local
-Address: 192.168.100.10
-
-css
+scss
 Copy code
-
 ![nslookup timeout](Error-6/01-nslookup-timeout.png)  
 
-From the Domain Controller itself:  
-
+**Server-side (`192.168.100.10`):**  
 C:\Users\Administrator> nslookup 192.168.100.10
 *** UnKnown can't find 192.168.100.10: Non-existent domain
 
-pgsql
+markdown
 Copy code
-
 ![nslookup nonexistent](Error-6/02-nslookup-nonexistent.png)  
 
 ## Root Cause  
-- The **DNS Server service on the Domain Controller** had not fully registered its resource records after promotion to Domain Controller.  
-- **IPv6 priority** was interfering with name resolution, defaulting queries to ::1 instead of the IPv4 address.  
-- Forward Lookup Zone (`soclab.local`) existed, but records were incomplete until the DNS service was restarted.  
+- The **DNS service on the Domain Controller** had not fully registered its resource records after promotion.  
+- The Forward Lookup Zone (`soclab.local`) existed but was incomplete until the DNS service was refreshed.  
+- Client lookups were hitting stale or missing records in the DNS cache.  
 
 ## Fix Applied  
-1. On the **Domain Controller (Server)**:  
+1. On the Domain Controller:  
    ```bash
    ipconfig /registerdns
    net stop dns
    net start dns
-This forced DNS to re-register resource records and refresh service state.
+This forced re-registration of DNS records and restarted the service.
 
 
-On the Windows 10 Client:
+On the Windows 10 client:
 
 bash
 Copy code
 ipconfig /flushdns
 nslookup soclab.local
-nslookup DC1.soclab.local
-This cleared stale cache and confirmed correct responses from the DC.
+This cleared stale cache, allowing the client to resolve the domain properly.
 
 
-Verified in DNS Manager that the Forward Lookup Zone contained both the DC1 record and the Windows 10 client host record.
-
-
-Successfully joined the Windows 10 client to the soclab.local domain.
+After confirming lookups resolved, the client was able to successfully join the domain.
 
 
 Lesson Learned
-Active Directory depends entirely on DNS — pings alone are not enough to prove readiness.
+DNS is critical for AD: domain joins depend entirely on DNS, not just network connectivity.
 
-Always flush and re-register DNS on the Domain Controller immediately after promotion.
+Always run ipconfig /registerdns and restart the DNS service after promoting a Domain Controller.
 
-Restarting the DNS Server service ensures records propagate correctly.
+Flush client caches (ipconfig /flushdns) to eliminate stale entries during troubleshooting.
 
-Client-side cache must also be flushed to avoid stale records blocking domain join.
-
+Verify Forward Lookup Zones in DNS Manager before attempting domain joins.
