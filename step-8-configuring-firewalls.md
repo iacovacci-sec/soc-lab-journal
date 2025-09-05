@@ -29,4 +29,4 @@
 - Proxmox firewall rules are **order-dependent** — the first matching rule applies.  
 - Always put ALLOW rules before DROP rules to avoid accidental lockouts.  
 - If locked out, direct console access to the Proxmox host is required to disable or adjust firewall rules.  
-- Configuring these firewalls improved lab security awareness before deploying Security Onion, ensuring the isolated SOC lab network remained contained.  
+- Configuring these firewalls improved lab security awareness before deploying VM's that may need internet access for updates, ensuring the isolated SOC lab network remained contained.  
