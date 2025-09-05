@@ -56,6 +56,4 @@ Clients rely entirely on the DC for DNS resolution; misconfiguration here will b
 
 Testing logon at the client side is the most conclusive way to confirm AD setup is working.
 
-Auxiliary Screenshots
 
-(01-aux-server-events.png) – AD DS/Server Manager showing domain service warnings and replication errors after promotion.
