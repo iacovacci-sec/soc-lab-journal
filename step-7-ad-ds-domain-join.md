@@ -62,4 +62,4 @@ Keeping everything on the vmbr1 isolated bridge ensures the SOC lab stays separa
 ## Auxiliary Screenshots  
 
 Server Manager AD DS events showing initial warnings/errors after promotion.  
-![Server Events](Step-7/aux-01-server-events.png)  
+![Server Events](Step-7/01-aux-server-events.png)  
