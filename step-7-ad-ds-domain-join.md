@@ -1,4 +1,4 @@
-Step 4 – AD DS Domain Join
+Step 7 – AD DS Domain Join
 Context (what I was doing)
 
 I was configuring the Windows Server 2019 VM as an Active Directory Domain Controller (AD DS) with DNS and then joining a Windows 10 client machine to the soclabs.local domain. The goal was to enable centralized authentication and validate that domain services were functioning end-to-end within the isolated SOC lab network.
