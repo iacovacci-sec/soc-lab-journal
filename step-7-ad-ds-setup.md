@@ -1,4 +1,4 @@
-# Step 4 – Active Directory Domain Services (AD DS) Setup  
+# Step 7 – Active Directory Domain Services (AD DS) Setup  
 
 **Context (what I was doing):**  
 I was configuring the Windows Server 2019 VM to act as a Domain Controller for the lab environment. This required adding the Active Directory Domain Services (AD DS) role, completing the prerequisites, and creating the first domain (`soclab.local`).  
