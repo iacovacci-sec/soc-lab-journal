@@ -10,7 +10,7 @@ First, I configured the static IP and DNS servers for the Splunk VM.
 
 Then I verified the VM’s network details in Proxmox and checked the installation logs during Ubuntu setup.  
 ![Proxmox Summary](Step-9/02-proxmox-summary.png)  
-![Ubuntu Install Log](Step-9/03-ubuntu-install-log.png)
+![Ubuntu Install Log](Step-9/03-ubuntu-install-log.jpg)
 
 After reboot, I confirmed the assigned IP using ip a on the Splunk server.  
 ![Ubuntu IP Check](Step-9/04-ubuntu-ip-check.png)
