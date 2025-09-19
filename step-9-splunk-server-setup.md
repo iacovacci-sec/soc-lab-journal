@@ -19,13 +19,13 @@ On my Windows host, I navigated to the ISO directory where I stored the Splunk .
 ![Windows ISO Dir](Step-9/05-windows-iso-dir.png)
 
 I used scp to securely copy the Splunk .deb package into the Splunk server’s home directory.  
-![SCP Transfer](Step-9/06-scp-transfer.png)
+![SCP Transfer](Step-9/06-scp-transfer.jpg)
 
 Once copied, I installed the .deb package with dpkg -i and started the service.  
 ![Splunk Install](Step-9/07-splunk-install.png)
 
 During the first run, Splunk required setting up an admin username and password.  
-![Splunk First Run](Step-9/08-splunk-first-run.png)
+![Splunk First Run](Step-9/08-splunk-first-run.jpg)
 
 Finally, Splunk successfully launched and exposed the web interface on port 8000.  
 ![Splunk Service Running](Step-9/09-splunk-service-running.png)
@@ -34,7 +34,7 @@ I configured a Proxmox firewall rule to allow inbound traffic to port 8000. Init
 ![Firewall Rule](Step-9/10-firewall-rule.png)
 
 However, I immediately hit a timeout error when trying to reach Splunk Web.  
-![Port Error](Step-9/11-port-error.png)
+![Port Error](Step-9/11-port-error.jpg)
 
 Further errors/clues confirmed traffic wasn’t flowing to the VM correctly.  
 ![Error Cause](Step-9/12-error-cause.png)  
