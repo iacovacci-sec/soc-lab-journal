@@ -6,7 +6,7 @@ Attempting to update the package database on my Intel NUC Proxmox host (`apt-get
 **Error Message:**  
 Err:6 https://enterprise.proxmox.com/debian/ceph-quincy
  bookworm InRelease
-401 Unauthorized [IP: 170.130.165.90 443]
+401 Unauthorized [IP: REDACTED_IP]
 E: Failed to fetch https://enterprise.proxmox.com/debian/ceph-quincy/dists/bookworm/InRelease
 E: The repository 'https://enterprise.proxmox.com/debian/ceph-quincy
  bookworm InRelease' is not signed.
