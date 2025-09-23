@@ -37,7 +37,7 @@ Later, I added Tailscale for remote access to Proxmox, making troubleshooting fr
 ![Proxmox task – Update package database failed](Error-1/01-task-fail.png)
 
 **Exact console error (401 Unauthorized + unsigned ceph-quincy repo)**
-![Console – enterprise.ceph-quincy 401/unsigned](Error-1/02-console-eror.jpg)
+![Console – enterprise.ceph-quincy 401/unsigned](Error-1/02-console-error.jpg)
 
 **Fix applied (disable enterprise, add no-subscription)**
 ![Commands – comment pve-enterprise, add pve-no-subscription](Error-1/03-apply-fix.png)
