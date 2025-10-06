@@ -26,6 +26,9 @@ I verified the new static IP (`192.168.X.X/24`) on interface enp6s18.
 Finally, a curl test against `https://192.168.X.X:8000` returned an HTTP 303 redirect, confirming Splunk Web was reachable via HTTPS.  
 ![Curl Success](Step-10/07-curl-success.png)  
 
+To confirm visually, I logged into Splunk Web over HTTPS and reached the dashboard.  
+![Splunk HTTPS Login](Step-10/08-splunk-https-login.png)  
+
 ## Root Cause  
 
 Splunk was initially running on `127.0.X.X` with a DHCP-assigned IP (`192.168.X.X`). Even after firewall rules were opened, the service was unreachable externally because:  
