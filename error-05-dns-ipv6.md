@@ -1,4 +1,4 @@
-# Error #5 – DNS Resolution Fails with IPv6 (nslookup soclab.local Timeout)
+# Error #05 – DNS Resolution Fails with IPv6 (nslookup soclab.local Timeout)
 
 ## Context (What I Was Doing)  
 While testing domain resolution after setting up Active Directory (AD DS) and DNS on the Server 2019 VM, I attempted to validate that the Windows 10 client could query the domain `soclab.local`.  
@@ -25,25 +25,25 @@ Address: ::1
 ## Error Screenshots  
 
 First, I checked that DNS services were running on the domain controller.  
-![DNS Services Running](Error-5/01-dns-services.png)  
+![DNS Services Running](Error-05/01-dns-services.png)  
 
 Next, I confirmed the Forward Lookup Zones contained `soclab.local`.  
-![Forward Zones](Error-5/02-forward-zones.png)  
+![Forward Zones](Error-05/02-forward-zones.png)  
 
 On the server, IP configuration showed the loopback DNS (`::1`) being used instead of IPv4.  
-![Server IPConfig](Error-5/03-server-ipconfig.png)  
+![Server IPConfig](Error-05/03-server-ipconfig.png)  
 
 On the Windows 10 client, DNS was pointed at the domain controller.  
-![Client IPConfig](Error-5/04-client-ipconfig.png)  
+![Client IPConfig](Error-05/04-client-ipconfig.png)  
 
 A ping test against `soclab.local` resolved correctly to the IPv4 address.  
-![Client Ping](Error-5/05-client-ping-domain.png)  
+![Client Ping](Error-05/05-client-ping-domain.png)  
 
 Running `nslookup soclab.local` by default failed due to IPv6.  
-![nslookup Timeout](Error-5/06-nslookup-timeout.png)  
+![nslookup Timeout](Error-05/06-nslookup-timeout.png)  
 
 Finally, forcing the query against the IPv4 address (`192.168.100.10`) succeeded.  
-![nslookup Success](Error-5/07-nslookup-success-ipv4.png)  
+![nslookup Success](Error-05/07-nslookup-success-ipv4.png)  
 
 ---
 
