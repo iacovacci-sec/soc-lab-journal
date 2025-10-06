@@ -18,7 +18,7 @@ As part of building the SOC lab, a Windows 10 client VM was installed on Proxmox
   - CPU: 4 cores
 
 **Screenshot – Confirm VM Settings**
-![VM Confirm](Step-5/01-win10-confirm.png)
+![VM Confirm](Step-05/01-win10-confirm.png)
 
 ---
 
@@ -27,12 +27,12 @@ As part of building the SOC lab, a Windows 10 client VM was installed on Proxmox
 After creation, verified VM in Proxmox:
 
 **Screenshot – VM Added to Proxmox**
-![VM Added](Step-5/02-win10-client-added.png)
+![VM Added](Step-05/02-win10-client-added.png)
 
 ---
 
 ## Next Steps
 
-- Installed Windows 10 using VirtIO drivers (see [Error 4 – VirtIO Driver “No Signed Device Drivers” During Windows 10 Client Setup](error-4-virtio-driver-nosigned.md) for details).  
+- Installed Windows 10 using VirtIO drivers (see [Error 4 – VirtIO Driver “No Signed Device Drivers” During Windows 10 Client Setup](error-04-virtio-driver-nosigned.md) for details).  
 - Confirmed that VM successfully booted into Windows 10 after drivers were loaded.  
 - Verified NIC and Balloon drivers installed inside the client VM.  
