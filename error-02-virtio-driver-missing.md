@@ -1,4 +1,4 @@
-# Error #2 – VirtIO Driver Missing During Windows Server Setup
+# Error #02 – VirtIO Driver Missing During Windows Server Setup
 
 ## Context (what I was doing)
 While installing Windows Server 2019 as a VM on Proxmox (q35 machine, OVMF UEFI, VirtIO SCSI controller), I selected VirtIO for both the disk and network to maximize performance. During installation, Windows Setup could not detect the virtual hard disk.
