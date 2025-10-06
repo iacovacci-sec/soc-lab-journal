@@ -6,13 +6,13 @@
    - Opened the Firewall tab in Proxmox to add rules for `vmbr0`.  
    - Initially created an ALLOW rule for port 8006 (Proxmox GUI) and a DROP rule for all other inbound traffic.  
 
-   ![Firewall Rules](Step-8/01-firewall-rules.png)  
+   ![Firewall Rules](Step-08/01-firewall-rules.png)  
 
 2. **Discovered Rule Ordering Issue**  
    - Learned that firewall rules in Proxmox are processed **top to bottom**.  
    - Because the DROP rule was above the ALLOW rule, the GUI was blocked, locking me out of the web interface.  
 
-   ![Locked Out](Step-8/02-firewall-locked-out.png)  
+   ![Locked Out](Step-08/02-firewall-locked-out.png)  
 
 3. **Recovered Access from Proxmox CLI**  
    - Connected a keyboard and mouse directly to the Intel NUC.  
@@ -23,7 +23,7 @@
    - Corrected the rule order: placed the ALLOW rule above the DROP rule.  
    - Verified the Proxmox GUI remained accessible while other inbound connections were blocked.  
 
-   ![Firewall Fixed](Step-8/03-firewall-fixed.png)  
+   ![Firewall Fixed](Step-08/03-firewall-fixed.png)  
 
 ## Lesson Learned  
 - Proxmox firewall rules are **order-dependent** — the first matching rule applies.  
