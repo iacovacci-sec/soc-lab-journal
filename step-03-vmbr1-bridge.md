@@ -1,11 +1,11 @@
-# Step 3 – Creating vmbr1 Isolated Bridge
+# Step 03 – Creating vmbr1 Isolated Bridge
 
 **Context (what I was doing):**  
 After setting up remote access with Tailscale, I needed an **isolated internal network** in Proxmox for SOC lab VMs. This ensures lab traffic (Windows Server AD, client machines, Security Onion, etc.) stays separate from my home LAN while still being routable inside the lab.
 
 **Screenshots:**  
-![Proxmox showing only vmbr0](Step-3/01-only-vmbr0.png)  
-![Creating the new bridge vmbr1](Step-3/02-create-isolated-bridge.png)
+![Proxmox showing only vmbr0](Step-03/01-only-vmbr0.png)  
+![Creating the new bridge vmbr1](Step-03/02-create-isolated-bridge.png)
 
 **Root Cause (why this step was needed):**  
 By default, Proxmox only has `vmbr0` bridged to the physical NIC. This ties all VM traffic directly to the home LAN.  
