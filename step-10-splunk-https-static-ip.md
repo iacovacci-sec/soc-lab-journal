@@ -1,4 +1,4 @@
-# Step 10 – Splunk HTTPS & Static IP Correction
+# Step 10 – Enable Splunk HTTPS & Static IP Correction
 ## Context  
 
 After enabling Splunk Web to run on HTTPS, I discovered I could not reach the login page from my workstation. At first I suspected firewall issues in Proxmox, but testing revealed the Splunk server was bound only to localhost and its IP address wasn’t properly aligned with the rest of my lab network. This step was about fixing Splunk’s networking by assigning a proper static IP, correcting YAML errors, and confirming HTTPS access externally.  
