@@ -18,17 +18,17 @@ The first attempt threw an “Invalid YAML: inconsistent indentation” error.
 ![Netplan Error](Step-10/04-netplan-error.png)  
 
 After correcting indentation for the `routes` section, netplan applied successfully.  
-![Netplan Fixed](Step-10/05-netplan-fixed.png)  
+![Netplan Fixed](Step-10/05-netplan-apply.png)  
 
-I verified the new static IP (`192.168.0.61/24`) on interface enp6s18.  
+I verified the new static IP (`192.168.X.X/24`) on interface enp6s18.  
 ![IP Address Check](Step-10/06-ip-show.png)  
 
-Finally, a curl test against `https://192.168.0.61:8000` returned an HTTP 303 redirect, confirming Splunk Web was reachable via HTTPS.  
+Finally, a curl test against `https://192.168.X.X:8000` returned an HTTP 303 redirect, confirming Splunk Web was reachable via HTTPS.  
 ![Curl Success](Step-10/07-curl-success.png)  
 
 ## Root Cause  
 
-Splunk was initially running on `127.0.0.1` with a DHCP-assigned IP (`192.168.0.60`). Even after firewall rules were opened, the service was unreachable externally because:  
+Splunk was initially running on `127.0.X.X` with a DHCP-assigned IP (`192.168.X.X`). Even after firewall rules were opened, the service was unreachable externally because:  
 - The VM did not have a properly defined static IP.  
 - Netplan YAML was mis-indented, causing route conflicts.  
 - HTTPS introduced a redirect that made testing harder to interpret at first.  
@@ -36,7 +36,7 @@ Splunk was initially running on `127.0.0.1` with a DHCP-assigned IP (`192.168.0.
 ## Fix Applied / Configuration Made  
 
 - Confirmed VM NIC (`enp6s18`) with `ip a`.  
-- Edited `/etc/netplan/00-installer-config.yaml` to set a static IP (`192.168.0.61/24`), gateway (`192.168.0.1`), and DNS.  
+- Edited `/etc/netplan/00-installer-config.yaml` to set a static IP (`192.168.X.X/24`), gateway (`192.168.X.X`), and DNS.  
 - Corrected YAML indentation for the `routes` block.  
 - Applied config with `sudo netplan apply`.  
 - Removed the old DHCP address manually with `ip addr del`.  
