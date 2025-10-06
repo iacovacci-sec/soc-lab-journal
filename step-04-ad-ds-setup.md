@@ -8,22 +8,22 @@ I was configuring the Windows Server 2019 VM to act as a Domain Controller for t
 **Screenshots and Walkthrough:**  
 
 First, I launched the **Add Roles and Features Wizard** and chose a role-based installation.  
-![Add Roles Wizard](Step-4/01-add-roles.png)  
+![Add Roles Wizard](Step-04/01-add-roles.png)  
 
 Next, I selected the **Active Directory Domain Services** role under Server Roles.  
-![Select AD DS](Step-4/02-select-ad-ds.png)  
+![Select AD DS](Step-04/02-select-ad-ds.png)  
 
 Once installed, **Server Manager** flagged that additional configuration was required to promote the server to a Domain Controller.  
-![Config Required](Step-4/03-config-required.png)  
+![Config Required](Step-04/03-config-required.png)  
 
 The **Prerequisites Check** confirmed that the configuration could proceed. There were warnings about static IP addresses and cryptography settings, but these were acceptable for a lab environment.  
-![Prerequisites Check](Step-4/04-prereqs.png)  
+![Prerequisites Check](Step-04/04-prereqs.png)  
 
 After the promotion completed, I opened **Active Directory Users and Computers (ADUC)** and confirmed the new domain `soclab.local` appeared with the server listed under Domain Controllers.  
-![ADUC Domain View](Step-4/05-ad-users-computers.png)  
+![ADUC Domain View](Step-04/05-ad-users-computers.png)  
 
 Finally, I created a new test user (`moevacci@soclab.local`) to validate that the domain was functional.  
-![Create User](Step-4/06-create-user.png)  
+![Create User](Step-04/06-create-user.png)  
 
 ---
 
