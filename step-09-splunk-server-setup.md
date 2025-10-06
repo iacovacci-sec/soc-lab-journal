@@ -43,7 +43,7 @@ Further errors/clues confirmed traffic wasn’t flowing to the VM correctly.
 The root issue was that Proxmox firewall rules must be applied to the VM’s NIC (net0) rather than the bridge (vmbr0). When I recreated the rule with the correct net0 interface, traffic passed properly.  
 ![Net0 Configuration](Step-09/14-net0-configuration.png)
 
-Success — Splunk Web was now reachable at http://192.168.0.60:8000.  
+Success — Splunk Web was now reachable at http://192.168.X.X:8000.  
 ![Splunk Web](Step-09/15-splunk.png)
 
 ## Root Cause
