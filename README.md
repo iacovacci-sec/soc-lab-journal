@@ -18,12 +18,12 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 - [Step 09 – Splunk Server Setup](step-09-splunk-server-setup.md)
 - [Step 10 – Splunk HTTPS & Static IP Fix](step-10-splunk-https-static-ip.md)
 ### Errors (Troubleshooting Logs)
-- [Error 1 – Proxmox Package Database Update Failure](error-01-proxmox-update.md)
-- [Error 2 – VirtIO Driver Missing During Windows Server Setup](error-02-virtio-driver.md)
-- [Error 3 – VirtIO NIC Driver Missing](error-03-virtio-nic.md)
-- [Error 4 – VirtIO Driver “No Signed Device Drivers” During Windows 10 Client Setup](error-04-virtio-driver-nosigned.md)
-- [Error 5 – DNS Resolution Fails with IPv6 (nslookup Timeout)](error-05-dns-ipv6.md)
-- [Error 6 – DNS Resolution Failure](error-06-dns-resolution.md)
+- [Error 01 – Proxmox Package Database Update Failure](error-01-proxmox-update.md)
+- [Error 02 – VirtIO Driver Missing During Windows Server Setup](error-02-virtio-driver.md)
+- [Error 03 – VirtIO NIC Driver Missing](error-03-virtio-nic.md)
+- [Error 04 – VirtIO Driver “No Signed Device Drivers” During Windows 10 Client Setup](error-04-virtio-driver-nosigned.md)
+- [Error 05 – DNS Resolution Fails with IPv6 (nslookup Timeout)](error-05-dns-ipv6.md)
+- [Error 06 – DNS Resolution Failure](error-06-dns-resolution.md)
 
 ---
 
