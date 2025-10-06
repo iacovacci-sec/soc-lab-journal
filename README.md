@@ -16,7 +16,7 @@ Documenting errors, fixes, and lessons learned from building a Proxmox SOC lab f
 - [Step 7 – AD DS Domain Join](step-7-ad-ds-domain-join.md)
 - [Step 8 – Configuring Firewalls](step-8-configuring-firewalls.md)
 - [Step 9 – Splunk Server Setup](step-9-splunk-server-setup.md)
-
+- [Step 10 – Splunk HTTPS & Static IP Fix](step-10-splunk-https-static-ip.md)
 ### Errors (Troubleshooting Logs)
 - [Error 1 – Proxmox Package Database Update Failure](error-1-proxmox-update.md)
 - [Error 2 – VirtIO Driver Missing During Windows Server Setup](error-2-virtio-driver.md)
