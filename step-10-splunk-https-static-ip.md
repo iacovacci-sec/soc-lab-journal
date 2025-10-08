@@ -32,7 +32,8 @@ To confirm visually, I logged into Splunk Web over HTTPS and reached the dashboa
 ## Root Cause  
 
 Splunk was initially running on `127.0.X.X` with a DHCP-assigned IP (`192.168.X.X`). Even after firewall rules were opened, the service was unreachable externally because:  
-- The VM did not have a properly defined static IP.  
+- The VM did not have a properly defined static IP,
+- The Network ID did not match the rest of the network.  
 - Netplan YAML was mis-indented, causing route conflicts.  
 - HTTPS introduced a redirect that made testing harder to interpret at first.  
 
