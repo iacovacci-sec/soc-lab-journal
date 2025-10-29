@@ -48,7 +48,8 @@ Splunk was initially running on `127.0.X.X` with a DHCP-assigned IP (`192.168.X.
 
 ## Lesson Learned  
 
-- Always check NIC name with `ip a` before editing netplan.  
+- Always check NIC name with `ip a` before editing netplan.
+- It's always worth the effort to ensure secure communications.
 - YAML is strict — even one space misaligned will cause errors.
 - Subnetting is vital for communication, all VMs must have the same Network ID to talk to each other. 
 - A firewall rule won’t help if the VM itself isn’t configured with the correct IP.  
