@@ -49,7 +49,8 @@ Splunk was initially running on `127.0.X.X` with a DHCP-assigned IP (`192.168.X.
 ## Lesson Learned  
 
 - Always check NIC name with `ip a` before editing netplan.  
-- YAML is strict — even one space misaligned will cause errors.  
+- YAML is strict — even one space misaligned will cause errors.
+- Subnetting is vital for communication, all VMs must have the same Network ID to talk to each other. 
 - A firewall rule won’t help if the VM itself isn’t configured with the correct IP.  
 - Splunk’s HTTPS Web UI shows an HTTP 303 redirect when working correctly.  
 - Assigning a static IP prevents conflicts and ensures Splunk stays reachable for both management and log ingestion.  
